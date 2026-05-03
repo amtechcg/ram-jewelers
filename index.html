@@ -1588,7 +1588,7 @@
         <h3>Request a Consultation</h3>
         <p>Let us know what you're looking for and we'll reach out to schedule a time that works for you.</p>
 
-        <form id="contact-form" novalidate>
+        <form id="contact-form" name="quote-form" data-netlify="true" novalidate>
           <div class="form-row">
             <div class="form-group">
               <label for="cf-first">First Name *</label>
@@ -1836,7 +1836,7 @@
   document.querySelectorAll('[data-reveal]').forEach(el => revealObserver.observe(el));
 
   // ─── Contact Form ───
-  document.getElementById('contact-form').addEventListener('submit', function(e) {
+  document.getElementById('contact-form').addEventListener('submit', async function(e) {
     e.preventDefault();
     const first = document.getElementById('cf-first').value.trim();
     const email = document.getElementById('cf-email').value.trim();
@@ -1851,13 +1851,34 @@
       return;
     }
 
-    // Simulate success (wire to backend/Formspree/Netlify Forms as needed)
-    this.style.display = 'none';
-    msg.style.display = 'block';
-    msg.style.borderColor = 'var(--gold)';
-    msg.style.color = 'var(--gold-light)';
-    msg.style.background = 'rgba(201,168,76,.1)';
-    msg.innerHTML = '<strong>Thank you, ' + first + '.</strong> We\'ve received your request and will be in touch within one business day. For immediate assistance, call <a href="tel:7323636808" style="color:var(--gold)">732.363.6808</a>.';
+    const submitBtn = this.querySelector('[type="submit"]');
+    submitBtn.textContent = 'Sending…';
+    submitBtn.disabled = true;
+
+    try {
+      const res = await fetch(window.location.pathname, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: new URLSearchParams(new FormData(this)).toString(),
+      });
+
+      if (!res.ok) throw new Error('Network response was not ok');
+
+      this.style.display = 'none';
+      msg.style.display = 'block';
+      msg.style.borderColor = 'var(--gold)';
+      msg.style.color = 'var(--gold-light)';
+      msg.style.background = 'rgba(201,168,76,.1)';
+      msg.innerHTML = '<strong>Thank you, ' + first + '.</strong> We\'ve received your request and will be in touch within one business day. For immediate assistance, call <a href="tel:7323636808" style="color:var(--gold)">732.363.6808</a>.';
+    } catch (err) {
+      submitBtn.textContent = 'Send Request →';
+      submitBtn.disabled = false;
+      msg.style.display = 'block';
+      msg.style.borderColor = '#e05';
+      msg.style.color = '#f66';
+      msg.style.background = 'rgba(220,0,80,.08)';
+      msg.textContent = 'Something went wrong. Please call us at 732.363.6808 or email ramjewelers@gmail.com.';
+    }
   });
 
   // ─── Floating CTA visibility ───
