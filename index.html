@@ -130,11 +130,11 @@
       display: flex;
       align-items: center;
     }
-    #logo-canvas-nav {
+    .logo-img-nav {
       height: 48px;
       width: auto;
       display: block;
-      filter: brightness(1.1);
+      border-radius: 3px;
     }
     .logo-fallback {
       font-family: 'Cormorant Garamond', serif;
@@ -851,12 +851,12 @@
       margin-bottom: 64px;
     }
     .footer-brand {}
-    #logo-canvas-footer {
+    .logo-img-footer {
       height: 40px;
       width: auto;
       display: block;
       margin-bottom: 20px;
-      filter: brightness(1.1);
+      border-radius: 3px;
     }
     .footer-tagline {
       font-size: 13px;
@@ -1011,8 +1011,7 @@
 <nav id="navbar" aria-label="Main navigation">
   <div class="nav-inner">
     <a href="#" class="nav-logo" aria-label="RAM Jewelers Home">
-      <canvas id="logo-canvas-nav" aria-hidden="true"></canvas>
-      <span class="logo-fallback" id="logo-fallback-nav" style="display:none">RAM JEWELERS</span>
+      <img src="NEW Ram Jewelers Logo.png" alt="RAM Jewelers" class="logo-img-nav">
     </a>
 
     <div class="nav-links" role="list">
@@ -1641,8 +1640,7 @@
   <div class="container">
     <div class="footer-top">
       <div class="footer-brand">
-        <canvas id="logo-canvas-footer" aria-hidden="true"></canvas>
-        <span id="logo-fallback-footer" class="logo-fallback" style="display:none;margin-bottom:20px">RAM JEWELERS</span>
+        <img src="NEW Ram Jewelers Logo.png" alt="RAM Jewelers" class="logo-img-footer">
         <p class="footer-tagline">
           GIA-certified fine jewelry and diamond retailer serving New Jersey families for over 30 years. Expert craftsmanship, genuine expertise, and the relationships that last a lifetime.
         </p>
@@ -1730,62 +1728,6 @@
 </script>
 
 <script>
-  // ─── PDF.js Logo Rendering ───
-  (function() {
-    const PDFJS_CDN = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js';
-    const WORKER   = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
-
-    function showFallback() {
-      ['nav','footer'].forEach(loc => {
-        const c = document.getElementById('logo-canvas-' + loc);
-        const f = document.getElementById('logo-fallback-' + loc);
-        if (c) c.style.display = 'none';
-        if (f) f.style.display = '';
-      });
-    }
-
-    async function renderLogoTo(canvasId, targetHeight) {
-      const canvas = document.getElementById(canvasId);
-      if (!canvas) return;
-      try {
-        pdfjsLib.GlobalWorkerOptions.workerSrc = WORKER;
-        const url  = 'Ram Jewelers Logo.pdf';
-        const pdf  = await pdfjsLib.getDocument(url).promise;
-        const page = await pdf.getPage(1);
-        const scale    = targetHeight / page.getViewport({ scale: 1 }).height;
-        const viewport = page.getViewport({ scale });
-        canvas.width  = viewport.width;
-        canvas.height = viewport.height;
-        canvas.style.width  = viewport.width  + 'px';
-        canvas.style.height = viewport.height + 'px';
-        const ctx = canvas.getContext('2d');
-        await page.render({ canvasContext: ctx, viewport }).promise;
-      } catch(e) {
-        console.warn('Logo render failed:', e);
-        showFallback();
-      }
-    }
-
-    function loadPDFJS() {
-      const s = document.createElement('script');
-      s.src = PDFJS_CDN;
-      s.onload = () => {
-        renderLogoTo('logo-canvas-nav', 48);
-        renderLogoTo('logo-canvas-footer', 40);
-      };
-      s.onerror = showFallback;
-      document.head.appendChild(s);
-    }
-
-    // Only try to load if the PDF exists locally
-    if (window.location.protocol === 'file:' || window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
-      loadPDFJS();
-    } else {
-      // When deployed, assume the PDF is at the root
-      loadPDFJS();
-    }
-  })();
-
   // ─── Mobile Menu ───
   const hamburger = document.getElementById('hamburger-btn');
   const mobileMenu = document.getElementById('mobile-menu');
