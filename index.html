@@ -1,0 +1,1890 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="RAM Jewelers — New Jersey's GIA-certified fine jewelry and diamond retailer. Expert engagement rings, bridal sets, loose diamonds, luxury watches, and professional jewelry repair in Lakewood, NJ. 711 Park Ave, Lakewood, NJ 08701. Call 732.363.6808.">
+  <title>RAM Jewelers | GIA-Certified Fine Jewelry, Diamonds & Watches | New Jersey</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    /* ─── Design tokens ─── */
+    :root {
+      --gold:        #c9a84c;
+      --gold-light:  #e8d5a3;
+      --gold-dark:   #9a7b30;
+      --black:       #080808;
+      --surface:     #111111;
+      --surface-2:   #1a1a1a;
+      --border:      rgba(201,168,76,.18);
+      --white:       #ffffff;
+      --off-white:   #f8f6f0;
+      --text-muted:  #888888;
+      --text-light:  #cccccc;
+      --radius:      2px;
+      --nav-h:       72px;
+    }
+
+    /* ─── Reset ─── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    img { display: block; max-width: 100%; }
+    a { text-decoration: none; color: inherit; }
+    button { cursor: pointer; border: none; background: none; font: inherit; }
+    ul, ol { list-style: none; }
+
+    body {
+      font-family: 'Montserrat', sans-serif;
+      background: var(--black);
+      color: var(--white);
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ─── Typography ─── */
+    .serif { font-family: 'Cormorant Garamond', serif; }
+    h1, h2, h3, h4 { font-family: 'Cormorant Garamond', serif; font-weight: 400; line-height: 1.1; }
+
+    /* ─── Utility ─── */
+    .container { max-width: 1240px; margin: 0 auto; padding: 0 24px; }
+    .gold { color: var(--gold); }
+    .section-label {
+      font-size: 10px;
+      letter-spacing: .25em;
+      text-transform: uppercase;
+      color: var(--gold);
+      font-weight: 500;
+      margin-bottom: 16px;
+      display: block;
+    }
+
+    /* ─── Buttons ─── */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 14px 32px;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: .15em;
+      text-transform: uppercase;
+      transition: all .25s ease;
+      border: 1px solid transparent;
+    }
+    .btn-gold {
+      background: var(--gold);
+      color: var(--black);
+      border-color: var(--gold);
+    }
+    .btn-gold:hover { background: var(--gold-light); border-color: var(--gold-light); }
+    .btn-outline {
+      background: transparent;
+      color: var(--white);
+      border-color: rgba(255,255,255,.4);
+    }
+    .btn-outline:hover { border-color: var(--gold); color: var(--gold); }
+    .btn-outline-gold {
+      background: transparent;
+      color: var(--gold);
+      border-color: var(--gold);
+    }
+    .btn-outline-gold:hover { background: var(--gold); color: var(--black); }
+
+    /* ─── Announcement Bar ─── */
+    #announcement {
+      background: var(--gold);
+      color: var(--black);
+      text-align: center;
+      padding: 10px 24px;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+    }
+    #announcement a { color: var(--black); text-decoration: underline; }
+
+    /* ─── Navbar ─── */
+    #navbar {
+      position: sticky;
+      top: 0;
+      z-index: 999;
+      background: rgba(8,8,8,.96);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+      height: var(--nav-h);
+    }
+    .nav-inner {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 0 32px;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 32px;
+    }
+    .nav-logo {
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+    }
+    #logo-canvas-nav {
+      height: 48px;
+      width: auto;
+      display: block;
+      filter: brightness(1.1);
+    }
+    .logo-fallback {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 24px;
+      font-weight: 500;
+      letter-spacing: .08em;
+      color: var(--gold);
+    }
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 36px;
+    }
+    .nav-links a {
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      color: var(--text-light);
+      transition: color .2s;
+    }
+    .nav-links a:hover { color: var(--gold); }
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      flex-shrink: 0;
+    }
+    .nav-phone {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: .08em;
+      color: var(--text-light);
+      transition: color .2s;
+    }
+    .nav-phone:hover { color: var(--gold); }
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      padding: 8px;
+    }
+    .hamburger span {
+      display: block;
+      width: 22px;
+      height: 1.5px;
+      background: var(--white);
+      transition: all .3s;
+    }
+    #mobile-menu {
+      display: none;
+      position: fixed;
+      inset: 0;
+      z-index: 998;
+      background: var(--black);
+      padding: 96px 32px 48px;
+      flex-direction: column;
+      gap: 8px;
+    }
+    #mobile-menu.open { display: flex; }
+    #mobile-menu a {
+      font-size: 28px;
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 400;
+      color: var(--white);
+      padding: 12px 0;
+      border-bottom: 1px solid var(--border);
+      transition: color .2s;
+    }
+    #mobile-menu a:hover { color: var(--gold); }
+    #mobile-menu .mobile-cta { margin-top: 32px; }
+
+    /* ─── Hero ─── */
+    #hero {
+      position: relative;
+      min-height: calc(100vh - var(--nav-h));
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+    }
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      background-image: url('https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?auto=format&fit=crop&w=1920&q=85');
+      background-size: cover;
+      background-position: center 40%;
+    }
+    .hero-bg::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        105deg,
+        rgba(8,8,8,.88) 0%,
+        rgba(8,8,8,.60) 50%,
+        rgba(8,8,8,.30) 100%
+      );
+    }
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      max-width: 680px;
+      padding: 80px 0;
+    }
+    .hero-eyebrow {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 28px;
+    }
+    .hero-eyebrow span {
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: .28em;
+      text-transform: uppercase;
+      color: var(--gold);
+    }
+    .hero-eyebrow::before {
+      content: '';
+      display: block;
+      width: 32px;
+      height: 1px;
+      background: var(--gold);
+    }
+    .hero-title {
+      font-size: clamp(48px, 7vw, 88px);
+      font-weight: 300;
+      line-height: 1.05;
+      letter-spacing: -.02em;
+      margin-bottom: 24px;
+    }
+    .hero-title em {
+      font-style: italic;
+      color: var(--gold-light);
+    }
+    .hero-sub {
+      font-size: 15px;
+      font-weight: 300;
+      line-height: 1.7;
+      color: var(--text-light);
+      max-width: 480px;
+      margin-bottom: 40px;
+    }
+    .hero-ctas {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+    .hero-scroll {
+      position: absolute;
+      bottom: 40px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+      color: rgba(255,255,255,.4);
+      font-size: 9px;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+      animation: scrollBob 2s ease-in-out infinite;
+    }
+    .hero-scroll svg { opacity: .5; }
+    @keyframes scrollBob { 0%,100%{transform:translateX(-50%) translateY(0)} 50%{transform:translateX(-50%) translateY(6px)} }
+
+    /* ─── Trust Strip ─── */
+    #trust-strip {
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      background: var(--surface);
+    }
+    .trust-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      divide-x: 1px solid var(--border);
+    }
+    .trust-item {
+      padding: 32px 24px;
+      text-align: center;
+      border-right: 1px solid var(--border);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+    }
+    .trust-item:last-child { border-right: none; }
+    .trust-icon {
+      width: 36px;
+      height: 36px;
+      color: var(--gold);
+    }
+    .trust-label {
+      font-size: 15px;
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 500;
+      letter-spacing: .03em;
+    }
+    .trust-sub {
+      font-size: 10px;
+      color: var(--text-muted);
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      font-weight: 500;
+    }
+
+    /* ─── Collections ─── */
+    #collections {
+      padding: 120px 0;
+    }
+    .section-header {
+      text-align: center;
+      margin-bottom: 64px;
+    }
+    .section-title {
+      font-size: clamp(36px, 4vw, 56px);
+      font-weight: 300;
+    }
+    .section-title em { font-style: italic; color: var(--gold-light); }
+    .collections-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 2px;
+    }
+    .collection-card {
+      position: relative;
+      aspect-ratio: 3/4;
+      overflow: hidden;
+      cursor: pointer;
+    }
+    .collection-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform .7s cubic-bezier(.25,.46,.45,.94);
+    }
+    .collection-card:hover img { transform: scale(1.06); }
+    .collection-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(8,8,8,.85) 0%, transparent 55%);
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 28px 24px;
+      transition: background .3s;
+    }
+    .collection-card:hover .collection-overlay {
+      background: linear-gradient(to top, rgba(8,8,8,.9) 0%, rgba(8,8,8,.2) 100%);
+    }
+    .collection-name {
+      font-size: 22px;
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 500;
+      margin-bottom: 6px;
+    }
+    .collection-sub {
+      font-size: 10px;
+      letter-spacing: .15em;
+      text-transform: uppercase;
+      color: var(--gold);
+      font-weight: 500;
+    }
+    .collection-arrow {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%) scale(.8);
+      opacity: 0;
+      width: 48px;
+      height: 48px;
+      border: 1px solid var(--gold);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--gold);
+      transition: all .3s;
+    }
+    .collection-card:hover .collection-arrow { opacity: 1; transform: translate(-50%, -50%) scale(1); }
+
+    /* ─── Bridal Feature ─── */
+    #bridal {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      min-height: 680px;
+    }
+    .bridal-image {
+      position: relative;
+      overflow: hidden;
+    }
+    .bridal-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 1s ease;
+    }
+    #bridal:hover .bridal-image img { transform: scale(1.03); }
+    .bridal-content {
+      background: var(--surface);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 80px 72px;
+    }
+    .bridal-content h2 {
+      font-size: clamp(36px, 3.5vw, 52px);
+      font-weight: 300;
+      margin-bottom: 24px;
+      line-height: 1.1;
+    }
+    .bridal-content h2 em { font-style: italic; color: var(--gold-light); }
+    .bridal-content p {
+      font-size: 15px;
+      font-weight: 300;
+      line-height: 1.8;
+      color: var(--text-light);
+      margin-bottom: 16px;
+    }
+    .bridal-features {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin: 32px 0 40px;
+    }
+    .bridal-feature {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 13px;
+      color: var(--text-light);
+    }
+    .bridal-feature::before {
+      content: '';
+      display: block;
+      width: 20px;
+      height: 1px;
+      background: var(--gold);
+      flex-shrink: 0;
+    }
+
+    /* ─── GIA Section ─── */
+    #gia {
+      padding: 120px 0;
+      background: var(--surface);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+    .gia-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+    }
+    .gia-content h2 {
+      font-size: clamp(36px, 3.5vw, 52px);
+      font-weight: 300;
+      margin-bottom: 24px;
+    }
+    .gia-content h2 em { font-style: italic; color: var(--gold-light); }
+    .gia-content p {
+      font-size: 15px;
+      font-weight: 300;
+      line-height: 1.8;
+      color: var(--text-light);
+      margin-bottom: 16px;
+    }
+    .gia-pillars {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+    .gia-pillar {
+      padding: 28px 32px;
+      border: 1px solid var(--border);
+      border-bottom: none;
+    }
+    .gia-pillar:last-child { border-bottom: 1px solid var(--border); }
+    .gia-pillar-title {
+      font-size: 17px;
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 500;
+      color: var(--gold-light);
+      margin-bottom: 8px;
+    }
+    .gia-pillar p {
+      font-size: 13px;
+      color: var(--text-muted);
+      line-height: 1.7;
+    }
+
+    /* ─── Repair Services ─── */
+    #repairs {
+      padding: 120px 0;
+    }
+    .repairs-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2px;
+      margin-top: 64px;
+    }
+    .repair-card {
+      background: var(--surface);
+      padding: 40px 36px;
+      border: 1px solid var(--border);
+      transition: border-color .3s, background .3s;
+    }
+    .repair-card:hover { border-color: var(--gold-dark); background: var(--surface-2); }
+    .repair-icon {
+      width: 40px;
+      height: 40px;
+      color: var(--gold);
+      margin-bottom: 20px;
+    }
+    .repair-card h3 {
+      font-size: 22px;
+      font-weight: 500;
+      margin-bottom: 12px;
+    }
+    .repair-card p {
+      font-size: 13px;
+      color: var(--text-muted);
+      line-height: 1.7;
+    }
+    .repair-cta-bar {
+      margin-top: 64px;
+      padding: 48px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 32px;
+    }
+    .repair-cta-bar h3 {
+      font-size: 28px;
+      font-weight: 400;
+    }
+    .repair-cta-bar p {
+      font-size: 14px;
+      color: var(--text-muted);
+      margin-top: 6px;
+    }
+
+    /* ─── Why RAM ─── */
+    #why-ram {
+      padding: 120px 0;
+      background: var(--surface);
+      border-top: 1px solid var(--border);
+    }
+    .why-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 40px;
+      margin-top: 64px;
+    }
+    .why-item {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+    .why-number {
+      font-size: 48px;
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 300;
+      color: var(--gold);
+      line-height: 1;
+    }
+    .why-item h3 {
+      font-size: 20px;
+      font-weight: 500;
+    }
+    .why-item p {
+      font-size: 13px;
+      color: var(--text-muted);
+      line-height: 1.7;
+    }
+
+    /* ─── Testimonials ─── */
+    #testimonials {
+      padding: 120px 0;
+    }
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin-top: 64px;
+    }
+    .testimonial-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      padding: 40px 36px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+    .stars {
+      display: flex;
+      gap: 4px;
+    }
+    .star {
+      color: var(--gold);
+      font-size: 14px;
+    }
+    .testimonial-text {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 19px;
+      font-style: italic;
+      font-weight: 400;
+      line-height: 1.6;
+      color: var(--off-white);
+      flex: 1;
+    }
+    .testimonial-author {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+    .author-name {
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: .08em;
+      color: var(--gold-light);
+    }
+    .author-detail {
+      font-size: 11px;
+      color: var(--text-muted);
+      letter-spacing: .06em;
+    }
+
+    /* ─── FAQ ─── */
+    #faq {
+      padding: 120px 0;
+      background: var(--surface);
+      border-top: 1px solid var(--border);
+    }
+    .faq-list {
+      max-width: 760px;
+      margin: 64px auto 0;
+    }
+    .faq-item {
+      border-bottom: 1px solid var(--border);
+    }
+    .faq-question {
+      width: 100%;
+      text-align: left;
+      padding: 24px 0;
+      font-size: 17px;
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 500;
+      color: var(--white);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      transition: color .2s;
+    }
+    .faq-question:hover { color: var(--gold); }
+    .faq-question.open { color: var(--gold); }
+    .faq-toggle {
+      width: 24px;
+      height: 24px;
+      flex-shrink: 0;
+      color: var(--gold);
+      position: relative;
+    }
+    .faq-toggle::before, .faq-toggle::after {
+      content: '';
+      position: absolute;
+      background: currentColor;
+      transition: transform .3s, opacity .3s;
+    }
+    .faq-toggle::before { width: 14px; height: 1px; top: 50%; left: 50%; transform: translate(-50%,-50%); }
+    .faq-toggle::after  { width: 1px; height: 14px; top: 50%; left: 50%; transform: translate(-50%,-50%); }
+    .faq-question.open .faq-toggle::after { transform: translate(-50%,-50%) rotate(90deg); opacity: 0; }
+    .faq-answer {
+      display: none;
+      padding: 0 0 24px;
+      font-size: 14px;
+      color: var(--text-muted);
+      line-height: 1.8;
+    }
+    .faq-answer.open { display: block; }
+
+    /* ─── Location ─── */
+    #location {
+      padding: 120px 0;
+    }
+    .location-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: start;
+    }
+    .location-info h2 {
+      font-size: clamp(32px, 3vw, 48px);
+      font-weight: 300;
+      margin-bottom: 32px;
+    }
+    .location-detail {
+      display: flex;
+      gap: 16px;
+      margin-bottom: 24px;
+    }
+    .location-detail-icon {
+      width: 20px;
+      height: 20px;
+      color: var(--gold);
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+    .location-detail-content {}
+    .location-detail-label {
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: .15em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 4px;
+    }
+    .location-detail-value {
+      font-size: 15px;
+      color: var(--white);
+      line-height: 1.6;
+    }
+    .location-detail-value a { color: var(--gold); }
+    .hours-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px 24px;
+      margin-top: 8px;
+    }
+    .hours-row {
+      display: flex;
+      justify-content: space-between;
+      font-size: 13px;
+      padding: 6px 0;
+      border-bottom: 1px solid var(--border);
+      color: var(--text-light);
+    }
+    .hours-row .day { color: var(--text-muted); }
+
+    /* ─── Contact Form ─── */
+    .contact-form-wrapper h3 {
+      font-size: 28px;
+      font-weight: 400;
+      margin-bottom: 8px;
+    }
+    .contact-form-wrapper > p {
+      font-size: 14px;
+      color: var(--text-muted);
+      margin-bottom: 32px;
+      line-height: 1.6;
+    }
+    .form-group {
+      margin-bottom: 16px;
+    }
+    .form-group label {
+      display: block;
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: .15em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 8px;
+    }
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      color: var(--white);
+      padding: 14px 16px;
+      font-size: 14px;
+      font-family: 'Montserrat', sans-serif;
+      outline: none;
+      transition: border-color .2s;
+      -webkit-appearance: none;
+    }
+    .form-group select {
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23888' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 16px center;
+      padding-right: 40px;
+      cursor: pointer;
+    }
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus { border-color: var(--gold); }
+    .form-group textarea { resize: vertical; min-height: 120px; }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    #contact-form-msg {
+      display: none;
+      padding: 16px 20px;
+      background: rgba(201,168,76,.12);
+      border: 1px solid var(--gold);
+      color: var(--gold-light);
+      font-size: 14px;
+      margin-top: 16px;
+    }
+
+    /* ─── Footer ─── */
+    #footer {
+      background: var(--surface);
+      border-top: 1px solid var(--border);
+      padding: 80px 0 40px;
+    }
+    .footer-top {
+      display: grid;
+      grid-template-columns: 1.5fr 1fr 1fr 1fr;
+      gap: 64px;
+      margin-bottom: 64px;
+    }
+    .footer-brand {}
+    #logo-canvas-footer {
+      height: 40px;
+      width: auto;
+      display: block;
+      margin-bottom: 20px;
+      filter: brightness(1.1);
+    }
+    .footer-tagline {
+      font-size: 13px;
+      color: var(--text-muted);
+      line-height: 1.7;
+      margin-bottom: 24px;
+    }
+    .footer-col h4 {
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 20px;
+    }
+    .footer-col ul { display: flex; flex-direction: column; gap: 10px; }
+    .footer-col ul li a {
+      font-size: 13px;
+      color: var(--text-muted);
+      transition: color .2s;
+    }
+    .footer-col ul li a:hover { color: var(--gold); }
+    .footer-bottom {
+      border-top: 1px solid var(--border);
+      padding-top: 32px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      flex-wrap: wrap;
+    }
+    .footer-legal { font-size: 11px; color: var(--text-muted); }
+    .footer-certs {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+    .cert-badge {
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--gold);
+      border: 1px solid var(--border);
+      padding: 6px 12px;
+    }
+
+    /* ─── Floating CTA ─── */
+    #floating-cta {
+      position: fixed;
+      bottom: 32px;
+      right: 32px;
+      z-index: 990;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      align-items: flex-end;
+      transition: opacity .3s;
+    }
+    .float-btn {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 14px 20px;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: .08em;
+      border-radius: 40px;
+      box-shadow: 0 4px 24px rgba(0,0,0,.5);
+      transition: transform .2s, box-shadow .2s;
+    }
+    .float-btn:hover { transform: translateY(-2px); box-shadow: 0 8px 32px rgba(0,0,0,.6); }
+    .float-call {
+      background: var(--gold);
+      color: var(--black);
+    }
+
+    /* ─── Responsive ─── */
+    @media (max-width: 1024px) {
+      .collections-grid { grid-template-columns: repeat(2, 1fr); }
+      .why-grid { grid-template-columns: repeat(2, 1fr); }
+      .footer-top { grid-template-columns: 1fr 1fr; gap: 40px; }
+      .gia-inner { gap: 48px; }
+      .bridal-content { padding: 60px 48px; }
+    }
+
+    @media (max-width: 768px) {
+      :root { --nav-h: 64px; }
+      .nav-links { display: none; }
+      .nav-phone { display: none; }
+      .nav-actions .btn { display: none; }
+      .hamburger { display: flex; }
+
+      #hero { min-height: calc(100svh - var(--nav-h)); }
+      .hero-title { font-size: clamp(38px, 8vw, 56px); }
+
+      .trust-grid { grid-template-columns: repeat(2, 1fr); }
+      .trust-item:nth-child(2) { border-right: none; }
+
+      #bridal { grid-template-columns: 1fr; }
+      .bridal-image { aspect-ratio: 16/9; }
+      .bridal-content { padding: 48px 32px; }
+
+      .gia-inner { grid-template-columns: 1fr; gap: 48px; }
+
+      .repairs-grid { grid-template-columns: 1fr 1fr; }
+      .repair-cta-bar { flex-direction: column; text-align: center; }
+
+      .why-grid { grid-template-columns: 1fr 1fr; gap: 32px; }
+
+      .testimonials-grid { grid-template-columns: 1fr; }
+
+      .location-inner { grid-template-columns: 1fr; gap: 48px; }
+      .form-row { grid-template-columns: 1fr; }
+
+      .footer-top { grid-template-columns: 1fr 1fr; gap: 40px; }
+      .footer-bottom { flex-direction: column; text-align: center; }
+
+      #floating-cta { bottom: 20px; right: 16px; }
+    }
+
+    @media (max-width: 480px) {
+      .collections-grid { grid-template-columns: 1fr; }
+      .repairs-grid { grid-template-columns: 1fr; }
+      .trust-grid { grid-template-columns: 1fr 1fr; }
+      .footer-top { grid-template-columns: 1fr; }
+      .hero-ctas { flex-direction: column; }
+      .hero-ctas .btn { width: 100%; justify-content: center; }
+    }
+
+    /* ─── Animations ─── */
+    [data-reveal] {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity .7s ease, transform .7s ease;
+    }
+    [data-reveal].revealed {
+      opacity: 1;
+      transform: none;
+    }
+  </style>
+</head>
+<body>
+
+<!-- Announcement Bar -->
+<div id="announcement">
+  GIA-Certified Diamonds — Independent Grading. Guaranteed Quality.
+  <a href="#contact" style="margin-left:12px;">Book a Free Consultation &rarr;</a>
+</div>
+
+<!-- Navbar -->
+<nav id="navbar" aria-label="Main navigation">
+  <div class="nav-inner">
+    <a href="#" class="nav-logo" aria-label="RAM Jewelers Home">
+      <canvas id="logo-canvas-nav" aria-hidden="true"></canvas>
+      <span class="logo-fallback" id="logo-fallback-nav" style="display:none">RAM JEWELERS</span>
+    </a>
+
+    <div class="nav-links" role="list">
+      <a href="#collections" role="listitem">Collections</a>
+      <a href="#bridal" role="listitem">Bridal</a>
+      <a href="#repairs" role="listitem">Repairs</a>
+      <a href="#gia" role="listitem">GIA Certified</a>
+      <a href="#location" role="listitem">Visit Us</a>
+    </div>
+
+    <div class="nav-actions">
+      <a href="tel:7323636808" class="nav-phone" aria-label="Call RAM Jewelers">732.363.6808</a>
+      <a href="#contact" class="btn btn-gold">Book Appointment</a>
+      <button class="hamburger" id="hamburger-btn" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<!-- Mobile Menu -->
+<div id="mobile-menu" role="dialog" aria-label="Mobile navigation">
+  <a href="#collections" class="mobile-link">Collections</a>
+  <a href="#bridal" class="mobile-link">Bridal</a>
+  <a href="#repairs" class="mobile-link">Repairs</a>
+  <a href="#gia" class="mobile-link">GIA Certified</a>
+  <a href="#location" class="mobile-link">Visit Us</a>
+  <div class="mobile-cta">
+    <a href="#contact" class="btn btn-gold" style="width:100%;justify-content:center;">Book an Appointment</a>
+    <a href="tel:7323636808" class="btn btn-outline" style="width:100%;justify-content:center;margin-top:12px;">Call 732.363.6808</a>
+  </div>
+</div>
+
+<!-- Hero -->
+<section id="hero">
+  <div class="hero-bg" role="img" aria-label="Elegant diamond engagement ring"></div>
+  <div class="container">
+    <div class="hero-content">
+      <div class="hero-eyebrow">
+        <span>GIA-Certified Jeweler &bull; New Jersey</span>
+      </div>
+      <h1 class="hero-title">
+        Where Love<br>Becomes <em>Legacy</em>
+      </h1>
+      <p class="hero-sub">
+        New Jersey's trusted destination for engagement rings, bridal jewelry, fine diamonds, luxury watches, and expert repairs. GIA-certified expertise — so every piece you choose is exactly what it says it is.
+      </p>
+      <div class="hero-ctas">
+        <a href="#collections" class="btn btn-gold">Explore Collections</a>
+        <a href="#contact" class="btn btn-outline">Book a Consultation</a>
+      </div>
+    </div>
+  </div>
+  <div class="hero-scroll" aria-hidden="true">
+    <svg width="16" height="24" viewBox="0 0 16 24" fill="none"><rect x="1" y="1" width="14" height="22" rx="7" stroke="white" stroke-width="1.2"/><rect x="7" y="5" width="2" height="6" rx="1" fill="white"/></svg>
+    Scroll
+  </div>
+</section>
+
+<!-- Trust Strip -->
+<section id="trust-strip" aria-label="Trust signals">
+  <div class="container">
+    <div class="trust-grid">
+      <div class="trust-item">
+        <svg class="trust-icon" viewBox="0 0 40 40" fill="none" aria-hidden="true">
+          <path d="M20 4L5 10v10c0 9 6.5 17.4 15 19.4C29.5 37.4 36 29 36 20V10L20 4z" stroke="currentColor" stroke-width="1.5" fill="none"/>
+          <path d="M13 20l5 5 9-10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <div class="trust-label">GIA Certified</div>
+        <div class="trust-sub">Gemological Institute of America</div>
+      </div>
+      <div class="trust-item">
+        <svg class="trust-icon" viewBox="0 0 40 40" fill="none" aria-hidden="true">
+          <circle cx="20" cy="20" r="15" stroke="currentColor" stroke-width="1.5"/>
+          <path d="M20 10v10l6 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <div class="trust-label">30+ Years</div>
+        <div class="trust-sub">Serving New Jersey Families</div>
+      </div>
+      <div class="trust-item">
+        <svg class="trust-icon" viewBox="0 0 40 40" fill="none" aria-hidden="true">
+          <path d="M8 32l5-5m0 0l7-7m-7 7l-5 5m12-12l4-4m0 0a5 5 0 117.07 7.07l-4 4M20 20l4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          <circle cx="30" cy="10" r="4" stroke="currentColor" stroke-width="1.5"/>
+        </svg>
+        <div class="trust-label">In-House Repairs</div>
+        <div class="trust-sub">Expert Craftsmen On-Site</div>
+      </div>
+      <div class="trust-item">
+        <svg class="trust-icon" viewBox="0 0 40 40" fill="none" aria-hidden="true">
+          <path d="M20 6l2.9 8.9H32l-7.4 5.4 2.8 8.9L20 24l-7.4 4.2 2.8-8.9L8 10.9h9.1L20 6z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
+        </svg>
+        <div class="trust-label">Custom Design</div>
+        <div class="trust-sub">One-of-a-Kind Creations</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Collections -->
+<section id="collections" aria-labelledby="collections-title">
+  <div class="container">
+    <div class="section-header" data-reveal>
+      <span class="section-label">Our Collections</span>
+      <h2 class="section-title" id="collections-title">
+        Fine Jewelry for<br><em>Every Milestone</em>
+      </h2>
+    </div>
+  </div>
+  <div class="collections-grid">
+
+    <a href="#contact" class="collection-card" aria-label="Engagement Rings">
+      <img
+        src="https://images.unsplash.com/photo-1605100804763-247f67b3557e?auto=format&fit=crop&w=800&q=80"
+        alt="Diamond engagement ring on velvet"
+        loading="lazy"
+      >
+      <div class="collection-overlay">
+        <div class="collection-sub">Starting at $1,200</div>
+        <div class="collection-name">Engagement Rings</div>
+      </div>
+      <div class="collection-arrow" aria-hidden="true">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </div>
+    </a>
+
+    <a href="#bridal" class="collection-card" aria-label="Bridal Sets & Wedding Bands">
+      <img
+        src="https://images.unsplash.com/photo-1611591437281-460bfbe1220a?auto=format&fit=crop&w=800&q=80"
+        alt="Elegant wedding bands"
+        loading="lazy"
+      >
+      <div class="collection-overlay">
+        <div class="collection-sub">Matching Sets Available</div>
+        <div class="collection-name">Bridal Sets & Bands</div>
+      </div>
+      <div class="collection-arrow" aria-hidden="true">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </div>
+    </a>
+
+    <a href="#contact" class="collection-card" aria-label="Fine Jewelry">
+      <img
+        src="https://images.unsplash.com/photo-1573408301185-9519f94815fe?auto=format&fit=crop&w=800&q=80"
+        alt="Fine jewelry necklaces and earrings"
+        loading="lazy"
+      >
+      <div class="collection-overlay">
+        <div class="collection-sub">Necklaces, Earrings & More</div>
+        <div class="collection-name">Fine Jewelry</div>
+      </div>
+      <div class="collection-arrow" aria-hidden="true">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </div>
+    </a>
+
+    <a href="#contact" class="collection-card" aria-label="Luxury Watches">
+      <img
+        src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=800&q=80"
+        alt="Luxury Swiss timepiece"
+        loading="lazy"
+      >
+      <div class="collection-overlay">
+        <div class="collection-sub">Swiss & Fine Timepieces</div>
+        <div class="collection-name">Luxury Watches</div>
+      </div>
+      <div class="collection-arrow" aria-hidden="true">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </div>
+    </a>
+
+  </div>
+</section>
+
+<!-- Bridal Feature -->
+<section id="bridal" aria-labelledby="bridal-title">
+  <div class="bridal-image">
+    <img
+      src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1200&q=85"
+      alt="Bride wearing elegant diamond engagement ring"
+      loading="lazy"
+    >
+  </div>
+  <div class="bridal-content">
+    <span class="section-label">Bridal Collection</span>
+    <h2 id="bridal-title">
+      Your Ring.<br>Your Story.<br><em>Perfectly Yours.</em>
+    </h2>
+    <p>
+      Choosing an engagement ring is one of the most significant decisions you'll ever make. Our GIA-certified gemologists will guide you through every step — from understanding the 4 Cs to selecting the perfect setting — with complete transparency and zero pressure.
+    </p>
+    <p>
+      Whether you're drawn to a timeless solitaire, a vintage-inspired halo, or a completely custom design built from scratch, we'll help you create a piece that will be treasured for generations.
+    </p>
+    <ul class="bridal-features">
+      <li class="bridal-feature">GIA-graded loose diamonds with independent certification</li>
+      <li class="bridal-feature">Custom design consultations — bring your vision or start from scratch</li>
+      <li class="bridal-feature">Full bridal sets with perfectly matched wedding bands</li>
+      <li class="bridal-feature">Resizing and future modifications included</li>
+      <li class="bridal-feature">Complimentary ring cleaning for life</li>
+    </ul>
+    <a href="#contact" class="btn btn-gold">Start Your Story</a>
+  </div>
+</section>
+
+<!-- GIA Section -->
+<section id="gia" aria-labelledby="gia-title">
+  <div class="container">
+    <div class="gia-inner">
+      <div class="gia-content" data-reveal>
+        <span class="section-label">Why Certification Matters</span>
+        <h2 id="gia-title">
+          The Gold Standard<br>in <em>Diamond Grading</em>
+        </h2>
+        <p>
+          The Gemological Institute of America is the world's foremost authority on diamonds. A GIA certificate isn't just paperwork — it's an independently verified, unbiased report on exactly what you're buying.
+        </p>
+        <p>
+          At RAM Jewelers, every diamond we sell comes with complete provenance and documentation. You'll know the exact cut, color, clarity, and carat weight — certified by scientists who have no financial stake in the grade they assign.
+        </p>
+        <p>
+          That's what separates us from retailers who use in-house grading or vague, unverifiable descriptions. When you buy a diamond here, you know what you have.
+        </p>
+        <a href="#contact" class="btn btn-outline-gold" style="margin-top:16px;">Ask About GIA Grading</a>
+      </div>
+      <div class="gia-pillars" data-reveal>
+        <div class="gia-pillar">
+          <div class="gia-pillar-title">Cut</div>
+          <p>The most critical factor in a diamond's brilliance. GIA grades cut on a five-point scale from Excellent to Poor — and only the top grades produce that signature sparkle.</p>
+        </div>
+        <div class="gia-pillar">
+          <div class="gia-pillar-title">Color</div>
+          <p>Diamonds are graded D (colorless) to Z (light color). Our gemologists will help you identify the sweet spot that balances visual purity with exceptional value.</p>
+        </div>
+        <div class="gia-pillar">
+          <div class="gia-pillar-title">Clarity</div>
+          <p>Natural inclusions are like fingerprints. GIA documents them precisely so you understand exactly what you're looking at — and why eye-clean stones matter most.</p>
+        </div>
+        <div class="gia-pillar">
+          <div class="gia-pillar-title">Carat</div>
+          <p>Carat weight is precise, but not all carats look the same. We'll show you how cut and proportion affect the perceived size of your stone.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Repair Services -->
+<section id="repairs" aria-labelledby="repairs-title">
+  <div class="container">
+    <div class="section-header" data-reveal>
+      <span class="section-label">Full-Service Repair Center</span>
+      <h2 class="section-title" id="repairs-title">
+        Expert Care for<br><em>Every Piece You Own</em>
+      </h2>
+      <p style="max-width:520px;margin:16px auto 0;font-size:14px;color:var(--text-muted);line-height:1.7">
+        Our in-house jewelers handle everything from quick fixes to complete restorations. No outsourcing. Every job stays in our shop, under our watch.
+      </p>
+    </div>
+
+    <div class="repairs-grid">
+      <div class="repair-card" data-reveal>
+        <svg class="repair-icon" viewBox="0 0 40 40" fill="none" aria-hidden="true">
+          <circle cx="20" cy="20" r="14" stroke="currentColor" stroke-width="1.5"/>
+          <path d="M20 10v3M20 27v3M10 20h3M27 20h3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+          <circle cx="20" cy="20" r="4" stroke="currentColor" stroke-width="1.5"/>
+        </svg>
+        <h3>Ring Resizing</h3>
+        <p>Fast, precise resizing up or down in any metal type — gold, platinum, or silver. Turnaround typically 3–5 business days. Rush service available.</p>
+      </div>
+      <div class="repair-card" data-reveal>
+        <svg class="repair-icon" viewBox="0 0 40 40" fill="none" aria-hidden="true">
+          <path d="M20 8l2 6h6l-5 3.6 2 6L20 20l-5 3.6 2-6L12 14h6l2-6z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
+          <path d="M12 32h16" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>
+        <h3>Stone Resetting</h3>
+        <p>Loose or damaged prongs repaired before you lose what matters most. We also reset heirloom stones into modern or custom settings.</p>
+      </div>
+      <div class="repair-card" data-reveal>
+        <svg class="repair-icon" viewBox="0 0 40 40" fill="none" aria-hidden="true">
+          <circle cx="20" cy="20" r="13" stroke="currentColor" stroke-width="1.5"/>
+          <circle cx="20" cy="20" r="6" stroke="currentColor" stroke-width="1.5"/>
+          <path d="M20 11v-4M20 33v-4M11 20H7M33 20h-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>
+        <h3>Watch Battery Service</h3>
+        <p>Same-day battery replacement for most watches. We use manufacturer-recommended cells and test water resistance where applicable.</p>
+      </div>
+      <div class="repair-card" data-reveal>
+        <svg class="repair-icon" viewBox="0 0 40 40" fill="none" aria-hidden="true">
+          <path d="M8 32L20 8l12 24H8z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
+          <path d="M13 24h14" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>
+        <h3>Custom Design</h3>
+        <p>From sketch to finished piece — we work with you to design jewelry that can't be found anywhere else. Engagement rings, anniversary pieces, or one-of-a-kind gifts.</p>
+      </div>
+      <div class="repair-card" data-reveal>
+        <svg class="repair-icon" viewBox="0 0 40 40" fill="none" aria-hidden="true">
+          <path d="M14 8h12v6l4 4v4l-4 4v6H14v-6l-4-4v-4l4-4V8z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
+          <circle cx="20" cy="20" r="3" stroke="currentColor" stroke-width="1.5"/>
+        </svg>
+        <h3>Jewelry Restoration</h3>
+        <p>Bringing heirloom pieces back to their original glory. We handle broken clasps, worn shanks, missing side stones, and full polishing and replating.</p>
+      </div>
+      <div class="repair-card" data-reveal>
+        <svg class="repair-icon" viewBox="0 0 40 40" fill="none" aria-hidden="true">
+          <path d="M20 8c-6.6 0-12 5.4-12 12a12 12 0 0012 12c6.6 0 12-5.4 12-12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+          <path d="M28 8l4 4-8 8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <h3>Cleaning & Inspection</h3>
+        <p>Professional ultrasonic cleaning, steam finishing, and full prong inspection. We recommend an annual check-up for any piece with gemstones.</p>
+      </div>
+    </div>
+
+    <div class="repair-cta-bar" data-reveal>
+      <div>
+        <h3>Not sure what your piece needs?</h3>
+        <p>Bring it in — free evaluations, no obligation.</p>
+      </div>
+      <a href="tel:7323636808" class="btn btn-gold">Call 732.363.6808</a>
+    </div>
+  </div>
+</section>
+
+<!-- Why RAM Jewelers -->
+<section id="why-ram" aria-labelledby="why-title">
+  <div class="container">
+    <div class="section-header" data-reveal>
+      <span class="section-label">Why RAM Jewelers</span>
+      <h2 class="section-title" id="why-title">
+        What Makes Us<br><em>Different</em>
+      </h2>
+    </div>
+    <div class="why-grid">
+      <div class="why-item" data-reveal>
+        <div class="why-number">01</div>
+        <h3>GIA Expertise You Can Trust</h3>
+        <p>Our certified gemologists speak the language of diamonds — and they'll share every detail with you. No pressure, no guesswork. Just honest expertise.</p>
+      </div>
+      <div class="why-item" data-reveal>
+        <div class="why-number">02</div>
+        <h3>Everything Stays In-House</h3>
+        <p>When you drop off a piece for repair, it never leaves our shop. Our jewelers work on-site, which means faster turnarounds and complete accountability.</p>
+      </div>
+      <div class="why-item" data-reveal>
+        <div class="why-number">03</div>
+        <h3>Family-Owned, Community-Rooted</h3>
+        <p>We've been part of this community for over three decades. Repeat customers bring their children. Their children bring their grandchildren. That's the relationship we build.</p>
+      </div>
+      <div class="why-item" data-reveal>
+        <div class="why-number">04</div>
+        <h3>Every Budget, Every Milestone</h3>
+        <p>From first jewelry gifts to significant anniversary pieces — we help customers across every budget find something they'll love wearing every single day.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Testimonials -->
+<section id="testimonials" aria-labelledby="testimonials-title">
+  <div class="container">
+    <div class="section-header" data-reveal>
+      <span class="section-label">Customer Stories</span>
+      <h2 class="section-title" id="testimonials-title">
+        Moments We've<br><em>Been Part Of</em>
+      </h2>
+    </div>
+    <div class="testimonials-grid">
+      <div class="testimonial-card" data-reveal>
+        <div class="stars" aria-label="5 stars">
+          <span class="star" aria-hidden="true">&#9733;</span>
+          <span class="star" aria-hidden="true">&#9733;</span>
+          <span class="star" aria-hidden="true">&#9733;</span>
+          <span class="star" aria-hidden="true">&#9733;</span>
+          <span class="star" aria-hidden="true">&#9733;</span>
+        </div>
+        <p class="testimonial-text">
+          "I walked in knowing absolutely nothing about diamonds. An hour later I understood exactly what I was looking at and why. No pressure — just genuine education. My fiancée cried when she saw the ring."
+        </p>
+        <div class="testimonial-author">
+          <div class="author-name">Michael R.</div>
+          <div class="author-detail">Engagement Ring &bull; Toms River, NJ</div>
+        </div>
+      </div>
+      <div class="testimonial-card" data-reveal>
+        <div class="stars" aria-label="5 stars">
+          <span class="star" aria-hidden="true">&#9733;</span>
+          <span class="star" aria-hidden="true">&#9733;</span>
+          <span class="star" aria-hidden="true">&#9733;</span>
+          <span class="star" aria-hidden="true">&#9733;</span>
+          <span class="star" aria-hidden="true">&#9733;</span>
+        </div>
+        <p class="testimonial-text">
+          "My grandmother's ring had a loose stone and a cracked shank. I was terrified to take it anywhere. RAM Jewelers had it restored in five days — looked better than it did in her wedding photos. Incredible work."
+        </p>
+        <div class="testimonial-author">
+          <div class="author-name">Jennifer K.</div>
+          <div class="author-detail">Jewelry Restoration &bull; Brick, NJ</div>
+        </div>
+      </div>
+      <div class="testimonial-card" data-reveal>
+        <div class="stars" aria-label="5 stars">
+          <span class="star" aria-hidden="true">&#9733;</span>
+          <span class="star" aria-hidden="true">&#9733;</span>
+          <span class="star" aria-hidden="true">&#9733;</span>
+          <span class="star" aria-hidden="true">&#9733;</span>
+          <span class="star" aria-hidden="true">&#9733;</span>
+        </div>
+        <p class="testimonial-text">
+          "We've been coming here for 22 years. Wedding bands, anniversary gifts, birthday gifts — even a watch for my husband's retirement. They remember us every time we walk in. That kind of relationship is rare."
+        </p>
+        <div class="testimonial-author">
+          <div class="author-name">Carol & David M.</div>
+          <div class="author-detail">Long-Time Customers &bull; Lakewood, NJ</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq" aria-labelledby="faq-title">
+  <div class="container">
+    <div class="section-header" data-reveal>
+      <span class="section-label">Common Questions</span>
+      <h2 class="section-title" id="faq-title">
+        Everything You<br><em>Want to Know</em>
+      </h2>
+    </div>
+    <div class="faq-list" role="list">
+
+      <div class="faq-item" role="listitem">
+        <button class="faq-question" aria-expanded="false">
+          What does GIA certification actually mean for my diamond?
+          <span class="faq-toggle" aria-hidden="true"></span>
+        </button>
+        <div class="faq-answer">
+          A GIA certificate means your diamond was graded by the world's most respected, independent gemological laboratory. The report documents the exact cut, color, clarity, and carat weight — assessed by scientists who have no financial interest in inflating the grade. When you buy a GIA-certified diamond, you know precisely what you have, and so does anyone you show it to.
+        </div>
+      </div>
+
+      <div class="faq-item" role="listitem">
+        <button class="faq-question" aria-expanded="false">
+          How long does jewelry repair take?
+          <span class="faq-toggle" aria-hidden="true"></span>
+        </button>
+        <div class="faq-answer">
+          Most repairs are completed in 5–10 business days. Simple jobs like ring resizing or watch battery replacement can often be done in 1–3 days. Custom work and full restorations take longer depending on complexity. We'll give you a realistic timeline when you drop off your piece — and we'll call you if anything changes.
+        </div>
+      </div>
+
+      <div class="faq-item" role="listitem">
+        <button class="faq-question" aria-expanded="false">
+          Do you offer custom jewelry design?
+          <span class="faq-toggle" aria-hidden="true"></span>
+        </button>
+        <div class="faq-answer">
+          Yes. We work with clients to design completely custom pieces — from initial concept through final production. You can bring in inspiration images, a rough sketch, or simply describe what you're envisioning. We'll develop a design, present you with a rendering, and build it once you're completely happy with the plan. It's one of our favorite things to do.
+        </div>
+      </div>
+
+      <div class="faq-item" role="listitem">
+        <button class="faq-question" aria-expanded="false">
+          Can I bring in my own diamond to be set?
+          <span class="faq-toggle" aria-hidden="true"></span>
+        </button>
+        <div class="faq-answer">
+          Absolutely. Many customers bring in inherited diamonds, stones from a previous setting, or diamonds purchased elsewhere and ask us to set them into a new piece. We'll evaluate the stone, recommend the best setting options, and do the work in-house.
+        </div>
+      </div>
+
+      <div class="faq-item" role="listitem">
+        <button class="faq-question" aria-expanded="false">
+          What's the best way to book an appointment?
+          <span class="faq-toggle" aria-hidden="true"></span>
+        </button>
+        <div class="faq-answer">
+          You can call us at 732.363.6808, email us at ramjewelers@gmail.com, or fill out the form below. Walk-ins are always welcome during store hours, but if you're planning to discuss an engagement ring or custom design, we recommend scheduling a consultation so we can give you our full attention.
+        </div>
+      </div>
+
+      <div class="faq-item" role="listitem">
+        <button class="faq-question" aria-expanded="false">
+          Do you offer financing or payment plans?
+          <span class="faq-toggle" aria-hidden="true"></span>
+        </button>
+        <div class="faq-answer">
+          Yes. We work with customers to find payment solutions that fit their situation — including layaway and financing options for qualified purchases. Talk to us in-store or mention it when you book your appointment and we'll walk you through what's available.
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- Location & Contact -->
+<section id="location" aria-labelledby="location-title">
+  <div class="container">
+    <div class="section-header" data-reveal>
+      <span class="section-label">Visit Us</span>
+      <h2 class="section-title" id="location-title">
+        Come See Us<br><em>In Person</em>
+      </h2>
+    </div>
+    <div class="location-inner">
+      <div class="location-info" data-reveal>
+        <h2 style="font-size:clamp(28px,3vw,40px);font-weight:300;margin-bottom:40px;">
+          We'd love to meet you.<br>
+          <em style="color:var(--gold-light)">No appointment necessary.</em>
+        </h2>
+
+        <div class="location-detail">
+          <svg class="location-detail-icon" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+            <path d="M10 2a6 6 0 016 6c0 4-6 10-6 10S4 12 4 8a6 6 0 016-6z" stroke="currentColor" stroke-width="1.2"/>
+            <circle cx="10" cy="8" r="2" stroke="currentColor" stroke-width="1.2"/>
+          </svg>
+          <div class="location-detail-content">
+            <div class="location-detail-label">Address</div>
+            <div class="location-detail-value">
+              711 Park Ave<br>Lakewood, NJ 08701<br>
+              <a href="https://maps.google.com?q=711+Park+Ave+Lakewood+NJ+08701" target="_blank" rel="noopener" style="color:var(--gold);font-size:12px;">Get Directions &rarr;</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="location-detail">
+          <svg class="location-detail-icon" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+            <path d="M4 4h12v12H4V4z" stroke="currentColor" stroke-width="1.2" stroke-linejoin="round"/>
+            <path d="M4 8h12M8 8v8" stroke="currentColor" stroke-width="1.2"/>
+          </svg>
+          <div class="location-detail-content">
+            <div class="location-detail-label">Store Hours</div>
+            <div class="location-detail-value">
+              <div class="hours-grid">
+                <div class="hours-row"><span class="day">Sunday</span><span>1pm – 4pm &amp; 8:30 – 10:30pm</span></div>
+                <div class="hours-row"><span class="day">Monday</span><span>1pm – 4pm &amp; 8:30 – 10:30pm</span></div>
+                <div class="hours-row"><span class="day">Tuesday</span><span>1pm – 4pm &amp; 8:30 – 10:30pm</span></div>
+                <div class="hours-row"><span class="day">Wednesday</span><span>1pm – 4pm &amp; 8:30 – 10:30pm</span></div>
+                <div class="hours-row"><span class="day">Thursday</span><span>1pm – 4pm &amp; 8:30 – 10:30pm</span></div>
+                <div class="hours-row"><span class="day">Friday</span><span>12pm – 2pm</span></div>
+                <div class="hours-row"><span class="day">Saturday</span><span>By Appointment</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="location-detail">
+          <svg class="location-detail-icon" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+            <path d="M4 4l3 3-2 3c1.5 3 4 5.5 7 7l3-2 3 3-4 2C9 21 1 13 2 6l2-2z" stroke="currentColor" stroke-width="1.2" stroke-linejoin="round"/>
+          </svg>
+          <div class="location-detail-content">
+            <div class="location-detail-label">Phone</div>
+            <div class="location-detail-value">
+              <a href="tel:7323636808" style="color:var(--gold)">732.363.6808</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="location-detail">
+          <svg class="location-detail-icon" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+            <rect x="2" y="4" width="16" height="12" rx="1" stroke="currentColor" stroke-width="1.2"/>
+            <path d="M2 6l8 6 8-6" stroke="currentColor" stroke-width="1.2" stroke-linejoin="round"/>
+          </svg>
+          <div class="location-detail-content">
+            <div class="location-detail-label">Email</div>
+            <div class="location-detail-value">
+              <a href="mailto:ramjewelers@gmail.com" style="color:var(--gold)">ramjewelers@gmail.com</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Contact Form -->
+      <div id="contact" class="contact-form-wrapper" data-reveal>
+        <h3>Request a Consultation</h3>
+        <p>Let us know what you're looking for and we'll reach out to schedule a time that works for you.</p>
+
+        <form id="contact-form" novalidate>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="cf-first">First Name *</label>
+              <input type="text" id="cf-first" name="first_name" required autocomplete="given-name" placeholder="Jane">
+            </div>
+            <div class="form-group">
+              <label for="cf-last">Last Name *</label>
+              <input type="text" id="cf-last" name="last_name" required autocomplete="family-name" placeholder="Smith">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="cf-email">Email *</label>
+            <input type="email" id="cf-email" name="email" required autocomplete="email" placeholder="jane@email.com">
+          </div>
+          <div class="form-group">
+            <label for="cf-phone">Phone</label>
+            <input type="tel" id="cf-phone" name="phone" autocomplete="tel" placeholder="732-555-0000">
+          </div>
+          <div class="form-group">
+            <label for="cf-interest">I'm interested in...</label>
+            <select id="cf-interest" name="interest">
+              <option value="" disabled selected>Select a category</option>
+              <option value="engagement">Engagement Ring</option>
+              <option value="bridal">Bridal Set / Wedding Bands</option>
+              <option value="fine-jewelry">Fine Jewelry</option>
+              <option value="watches">Luxury Watch</option>
+              <option value="custom">Custom Design</option>
+              <option value="repair">Jewelry Repair</option>
+              <option value="diamonds">Loose Diamonds</option>
+              <option value="other">Something Else</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="cf-message">Message</label>
+            <textarea id="cf-message" name="message" placeholder="Tell us a bit about what you're looking for..."></textarea>
+          </div>
+          <button type="submit" class="btn btn-gold" style="width:100%;justify-content:center;">
+            Send Request &rarr;
+          </button>
+          <div id="contact-form-msg" role="alert"></div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer id="footer">
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <canvas id="logo-canvas-footer" aria-hidden="true"></canvas>
+        <span id="logo-fallback-footer" class="logo-fallback" style="display:none;margin-bottom:20px">RAM JEWELERS</span>
+        <p class="footer-tagline">
+          GIA-certified fine jewelry and diamond retailer serving New Jersey families for over 30 years. Expert craftsmanship, genuine expertise, and the relationships that last a lifetime.
+        </p>
+        <a href="tel:7323636808" class="btn btn-outline-gold" style="margin-top:4px;">732.363.6808</a>
+      </div>
+      <div class="footer-col">
+        <h4>Collections</h4>
+        <ul>
+          <li><a href="#collections">Engagement Rings</a></li>
+          <li><a href="#bridal">Bridal Sets</a></li>
+          <li><a href="#collections">Wedding Bands</a></li>
+          <li><a href="#collections">Fine Jewelry</a></li>
+          <li><a href="#collections">Luxury Watches</a></li>
+          <li><a href="#contact">Loose Diamonds</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="#repairs">Ring Resizing</a></li>
+          <li><a href="#repairs">Stone Resetting</a></li>
+          <li><a href="#repairs">Custom Design</a></li>
+          <li><a href="#repairs">Watch Battery</a></li>
+          <li><a href="#repairs">Full Restoration</a></li>
+          <li><a href="#repairs">Jewelry Cleaning</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="tel:7323636808">732.363.6808</a></li>
+          <li><a href="mailto:ramjewelers@gmail.com">ramjewelers@gmail.com</a></li>
+          <li><a href="#location">Store Hours</a></li>
+          <li><a href="#contact">Book Appointment</a></li>
+          <li><a href="#faq">FAQ</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="footer-legal">&copy; 2025 RAM Jewelers. All rights reserved.</p>
+      <div class="footer-certs">
+        <span class="cert-badge">GIA Certified</span>
+        <span class="cert-badge">In-House Repairs</span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- Floating CTA (mobile) -->
+<div id="floating-cta" aria-label="Quick contact">
+  <a href="tel:7323636808" class="float-btn float-call" aria-label="Call RAM Jewelers">
+    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+      <path d="M2 2l3.5 1-.5 3c1 2 3 4 5 5l3-.5L14 14l-2.5 1C5.5 15.5 1.5 11.5 1 5.5L2 2z" stroke="currentColor" stroke-width="1.2" stroke-linejoin="round"/>
+    </svg>
+    Call Now
+  </a>
+</div>
+
+<!-- Scripts -->
+<script type="module">
+  // ─── Pretext ───
+  import { prepare, layout } from 'https://esm.sh/@chenglou/pretext';
+
+  const pretextEls = [];
+
+  async function initPretext() {
+    await document.fonts.ready;
+    document.querySelectorAll('[data-pretext]').forEach(el => {
+      const handle = prepare(el.textContent, getComputedStyle(el).font);
+      pretextEls.push({ el, handle });
+    });
+    relayout();
+  }
+
+  function relayout() {
+    pretextEls.forEach(({ el, handle }) => {
+      const lh = parseFloat(getComputedStyle(el).lineHeight) || 24;
+      const { height } = layout(handle, el.clientWidth, lh);
+      el.style.height = height + 'px';
+    });
+  }
+
+  new ResizeObserver(relayout).observe(document.body);
+  initPretext();
+</script>
+
+<script>
+  // ─── PDF.js Logo Rendering ───
+  (function() {
+    const PDFJS_CDN = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js';
+    const WORKER   = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
+
+    function showFallback() {
+      ['nav','footer'].forEach(loc => {
+        const c = document.getElementById('logo-canvas-' + loc);
+        const f = document.getElementById('logo-fallback-' + loc);
+        if (c) c.style.display = 'none';
+        if (f) f.style.display = '';
+      });
+    }
+
+    async function renderLogoTo(canvasId, targetHeight) {
+      const canvas = document.getElementById(canvasId);
+      if (!canvas) return;
+      try {
+        pdfjsLib.GlobalWorkerOptions.workerSrc = WORKER;
+        const url  = 'Ram Jewelers Logo.pdf';
+        const pdf  = await pdfjsLib.getDocument(url).promise;
+        const page = await pdf.getPage(1);
+        const scale    = targetHeight / page.getViewport({ scale: 1 }).height;
+        const viewport = page.getViewport({ scale });
+        canvas.width  = viewport.width;
+        canvas.height = viewport.height;
+        canvas.style.width  = viewport.width  + 'px';
+        canvas.style.height = viewport.height + 'px';
+        const ctx = canvas.getContext('2d');
+        await page.render({ canvasContext: ctx, viewport }).promise;
+      } catch(e) {
+        console.warn('Logo render failed:', e);
+        showFallback();
+      }
+    }
+
+    function loadPDFJS() {
+      const s = document.createElement('script');
+      s.src = PDFJS_CDN;
+      s.onload = () => {
+        renderLogoTo('logo-canvas-nav', 48);
+        renderLogoTo('logo-canvas-footer', 40);
+      };
+      s.onerror = showFallback;
+      document.head.appendChild(s);
+    }
+
+    // Only try to load if the PDF exists locally
+    if (window.location.protocol === 'file:' || window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
+      loadPDFJS();
+    } else {
+      // When deployed, assume the PDF is at the root
+      loadPDFJS();
+    }
+  })();
+
+  // ─── Mobile Menu ───
+  const hamburger = document.getElementById('hamburger-btn');
+  const mobileMenu = document.getElementById('mobile-menu');
+
+  hamburger.addEventListener('click', () => {
+    const isOpen = mobileMenu.classList.toggle('open');
+    hamburger.setAttribute('aria-expanded', isOpen);
+    document.body.style.overflow = isOpen ? 'hidden' : '';
+  });
+
+  document.querySelectorAll('.mobile-link, #mobile-menu .btn').forEach(el => {
+    el.addEventListener('click', () => {
+      mobileMenu.classList.remove('open');
+      hamburger.setAttribute('aria-expanded', 'false');
+      document.body.style.overflow = '';
+    });
+  });
+
+  // ─── FAQ Accordion ───
+  document.querySelectorAll('.faq-question').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const isOpen = btn.classList.contains('open');
+      // Close all
+      document.querySelectorAll('.faq-question').forEach(b => {
+        b.classList.remove('open');
+        b.setAttribute('aria-expanded', 'false');
+        b.nextElementSibling.classList.remove('open');
+      });
+      // Toggle clicked
+      if (!isOpen) {
+        btn.classList.add('open');
+        btn.setAttribute('aria-expanded', 'true');
+        btn.nextElementSibling.classList.add('open');
+      }
+    });
+  });
+
+  // ─── Scroll Reveal ───
+  const revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach((entry, i) => {
+      if (entry.isIntersecting) {
+        entry.target.style.transitionDelay = (i * 80) + 'ms';
+        entry.target.classList.add('revealed');
+        revealObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+
+  document.querySelectorAll('[data-reveal]').forEach(el => revealObserver.observe(el));
+
+  // ─── Contact Form ───
+  document.getElementById('contact-form').addEventListener('submit', function(e) {
+    e.preventDefault();
+    const first = document.getElementById('cf-first').value.trim();
+    const email = document.getElementById('cf-email').value.trim();
+    const msg   = document.getElementById('contact-form-msg');
+
+    if (!first || !email) {
+      msg.style.display = 'block';
+      msg.style.borderColor = '#e05';
+      msg.style.color = '#f66';
+      msg.style.background = 'rgba(220,0,80,.08)';
+      msg.textContent = 'Please fill in your name and email address.';
+      return;
+    }
+
+    // Simulate success (wire to backend/Formspree/Netlify Forms as needed)
+    this.style.display = 'none';
+    msg.style.display = 'block';
+    msg.style.borderColor = 'var(--gold)';
+    msg.style.color = 'var(--gold-light)';
+    msg.style.background = 'rgba(201,168,76,.1)';
+    msg.innerHTML = '<strong>Thank you, ' + first + '.</strong> We\'ve received your request and will be in touch within one business day. For immediate assistance, call <a href="tel:7323636808" style="color:var(--gold)">732.363.6808</a>.';
+  });
+
+  // ─── Floating CTA visibility ───
+  const floatingCta = document.getElementById('floating-cta');
+  const heroSection = document.getElementById('hero');
+  const heroObserver = new IntersectionObserver(([entry]) => {
+    floatingCta.style.opacity = entry.isIntersecting ? '0' : '1';
+    floatingCta.style.pointerEvents = entry.isIntersecting ? 'none' : '';
+  }, { threshold: 0.3 });
+  heroObserver.observe(heroSection);
+
+  // ─── Smooth nav link underline on scroll ───
+  const sections = document.querySelectorAll('section[id]');
+  const navLinks = document.querySelectorAll('.nav-links a');
+  const sectionObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        navLinks.forEach(a => {
+          a.style.color = a.getAttribute('href') === '#' + entry.target.id
+            ? 'var(--gold)'
+            : '';
+        });
+      }
+    });
+  }, { threshold: 0.4 });
+  sections.forEach(s => sectionObserver.observe(s));
+</script>
+
+</body>
+</html>
